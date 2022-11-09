@@ -31,15 +31,15 @@ namespace Inheritance
                 switch(rnd.Next() % 3)
                 {
                     case 0:
-                        this.moviesList.Add(new film());
+                        this.moviesList.Add(film.Generate());
                         break;
 
                     case 1:
-                        this.moviesList.Add(new soapOpera());
+                        this.moviesList.Add(film.Generate());
                         break;
 
                     case 2:
-                        this.moviesList.Add(new television());
+                        this.moviesList.Add(film.Generate());
                         break;
                 }
             }
@@ -76,6 +76,22 @@ namespace Inheritance
             }
             
 
+        }
+
+        private void btnGet_Click(object sender, EventArgs e)
+        {
+            if (this.moviesList.Count == 0)
+            {
+                textOut.Text = "Пусто";
+                return;
+            }
+
+            movie cinimatic = this.moviesList[0];
+            this.moviesList.RemoveAt(0);
+            
+            textOut.Text = cinimatic.getInfo();
+            
+            ShowInfo();
         }
     }
 }
