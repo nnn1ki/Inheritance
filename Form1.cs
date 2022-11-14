@@ -27,7 +27,6 @@ namespace Inheritance
             var rnd = new Random();
             for (var i = 0; i < 10; i++)
             {
-
                 switch(rnd.Next() % 3)
                 {
                     case 0:
@@ -35,11 +34,11 @@ namespace Inheritance
                         break;
 
                     case 1:
-                        this.moviesList.Add(film.Generate());
+                        this.moviesList.Add(soapOpera.Generate());
                         break;
 
                     case 2:
-                        this.moviesList.Add(film.Generate());
+                        this.moviesList.Add(television.Generate());
                         break;
                 }
             }

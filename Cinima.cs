@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 //WindowsFormsApp1
 namespace Inheritance
 {
-
-
     public class movie
     {
         public int rating = 0;
@@ -38,17 +36,15 @@ namespace Inheritance
             return str;
         }
 
-        public static film Generate()
+        public static movie Generate()
         {
             var rnd = new Random();
             return new film {
+                rating = rnd.Next(100),
                 yearRelease = rnd.Next(100) % 100,
                 country = (Country)rnd.Next(3) 
             };
         }
-
-
-
     }
 
     
@@ -71,6 +67,7 @@ namespace Inheritance
         {
             return new soapOpera
             {
+                rating = rnd.Next(100) % 100,
                 totalSeries = 250 + rnd.Next(250),
                 totalSeasons = 1 + rnd.Next(10)
             };
@@ -95,6 +92,7 @@ namespace Inheritance
         {
             return new television
             {
+                rating = rnd.Next(100),
                 chanal = 1 + rnd.Next() % 20
             };
         }
